@@ -1,0 +1,19 @@
+<html>
+<head>
+    <script type="text/javascript">
+        // Extract 'thunderid' from the URL's query parameters
+        const params = new URLSearchParams(window.location.search);
+        const messageId = params.get('thunderid');
+        
+        // If 'thunderid' is found, redirect to the Thunderbird URL
+        if (messageId) {
+            window.location.href = `thunderbird://mail?messageid=${messageId}`;
+        } else {
+            document.write("<p>Error: No message ID provided.</p>");
+        }
+    </script>
+</head>
+<body>
+    <p>If you are not redirected, <span id="redirect-link"></span></p>
+</body>
+</html>
